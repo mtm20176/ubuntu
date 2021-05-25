@@ -1,0 +1,26 @@
+version: 0.2
+workspace:
+  # Type indicates the provider type to use when building the workspace.
+  # It corresponds to the `kubernetes` section under `specs`.
+  type: kubernetes
+  specs:
+    kubernetes:
+      image: 
+        value: index.docker.io/ubuntu:18.04
+      container-based-vm:
+        value: true
+      cpu:
+        value: 4
+      memory:
+        value: 16
+      disk:
+        value: 16
+      gpu-count:
+        value: 0
+  configure:
+    start:
+      value:
+        - name: "install curl"
+          command: |
+            apt update
+            apt install -y curl
