@@ -24,3 +24,5 @@ workspace:
           command: |
             apt update
             apt install -y curl
+            apt install -y git
+            apt install -y ssh
